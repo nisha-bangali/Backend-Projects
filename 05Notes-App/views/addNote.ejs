@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Note</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans min-h-screen flex items-center justify-center">
+  <div class="w-full max-w-md bg-white p-6 rounded shadow-md">
+    <h1 class="text-2xl font-bold mb-6 text-center">Add a New Note</h1>
+    <form action="/add" method="POST" class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium mb-1">Title</label>
+        <input type="text" name="title" placeholder="Title" required
+               class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1">Body</label>
+        <textarea name="body" placeholder="Note body" required rows="4"
+                  class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1">Tags</label>
+        <input type="text" name="tags" placeholder="Tags (comma separated, e.g. work, personal)"
+               class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+      <button type="submit"
+              class="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition">
+        Add Note
+      </button>
+    </form>
+  </div>
+</body>
+</html>

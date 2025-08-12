@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Upload Video</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="p-10 bg-gray-200">
+    <h1 class="text-3xl font-bold mb-6 ml-28">Upload Your Video</h1>
+    <div class="w-5/6 mx-auto">
+        <form action="/upload" method="POST" enctype="multipart/form-data" class="space-y-4 ">
+            <input type="text" name="title" placeholder="Title" class="block w-full p-2 border" required>
+            <textarea name="description" placeholder="Description" class="block w-full p-2 border" required></textarea>
+            <input type="file" name="video" accept="video/*" required>
+            <input type="file" name="thumbnail" accept="image/*" required>
+            <button class="bg-blue-500 text-white px-4 py-2 rounded" type="submit">Upload</button>
+        </form>
+    </div>
+</body>
+
+</html>

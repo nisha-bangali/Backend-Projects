@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>QR Generator</title>
+</head>
+<body class="bg-gray-100 flex flex-col items-center p-6">
+  <h1 class="text-3xl font-bold mb-6">QR Code Generator</h1>
+
+  <form action="/generate" method="POST" class="w-full max-w-md mb-8">
+    <input name="text" type="text" placeholder="Enter text or URL" required
+           class="w-full p-2 border border-gray-400 rounded mb-2" />
+    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Generate</button>
+  </form>
+
+  <% if (qrImage) { %>
+    <div class="mb-8">
+      <img src="<%= qrImage %>" alt="QR Code" class="w-48 h-48" />
+    </div>
+  <% } %>
+
+  <div class="w-full max-w-xl">
+    <h2 class="text-xl font-semibold mb-4">QR History</h2>
+    <ul class="bg-white shadow rounded p-4">
+      <% qrs.forEach(qr => { %>
+        <li class="border-b py-2"><%= qr.text %></li>
+      <% }) %>
+    </ul>
+  </div>
+</body>
+</html>
